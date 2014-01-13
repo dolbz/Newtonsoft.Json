@@ -309,7 +309,7 @@ namespace Newtonsoft.Json.Linq
         {
             JToken token = this[key];
 
-            return Extensions.Convert<JToken, T>(token);
+            return token == null ? default(T) : Extensions.Convert<JToken, T>(token);
         }
 
         /// <summary>
